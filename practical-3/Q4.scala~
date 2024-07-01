@@ -1,0 +1,10 @@
+object Q4 extends App{
+  def sum_of_list(int_list:List[Int]):Int = {
+    if(int_list.length==1) return int_list(0);
+    sum_of_list(int_list.slice(0,int_list.length-1)) + int_list.last;
+  };
+
+  val int_list = List(1,2,3,4,5);
+  val sum = sum_of_list(int_list);
+  println(s"sum of $int_list is $sum");
+}

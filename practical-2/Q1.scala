@@ -1,6 +1,6 @@
 object Q1 {
   def main(args: Array[String]) {
-    val k,j = 2;
+    val k,j = 0;
     var i=2;
     val m,n = 5;
     val (f,g,c) = (12.0f,4.0f,'X');
@@ -10,6 +10,7 @@ object Q1 {
     println(n%j);
     println(m/j*j);
     println(f+10*5+g);
-    println(++i*n); // err
+    i+=1;
+    println(i*n);
   }
 }

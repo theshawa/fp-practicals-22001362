@@ -1,6 +1,6 @@
 object Q4{
   def main(args:Array[String]){
-    val ticket_price = 24.0f;
+    val ticket_price = 23.9f;
     printf("profit for %.2f is %.2f\n",ticket_price,profit(ticket_price));
   }
 

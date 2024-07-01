@@ -1,5 +1,5 @@
 object Q2{
-  def main(args:Array[String]){
+  def main(a:Array[String]){
     var (a,b,c,d,k) = (2,3,4,5,4.3f);
 
     b-=1;
