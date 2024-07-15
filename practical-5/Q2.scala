@@ -37,11 +37,3 @@ object Q2 extends App {
   searchBookByTitle("1984");
   displayBooksByAuthor("George Orwell");
 }
-/*
-val book = books(i);
-      printf(
-        s"Book ${i+1}:\nTitle: %s\nAuthor: %s\nISBN: %s\n",
-        book.title, book.author, book.isbn
-      );
-
- */
