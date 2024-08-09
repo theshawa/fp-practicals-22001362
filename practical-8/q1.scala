@@ -29,17 +29,13 @@ object Q1 extends App {
     else getShiftedChar(encrypted.head, -key) + caesar_decrypt(encrypted.tail,key);
   }
 
-
-  def caesar_cipher(text:String,shift:Int,mode:Char='e'):String = mode match {
-    case 'd' => caesar_decrypt(text,shift);
-    case _ => caesar_encrypt(text,shift);
-  }
+  def caesar_cipher(fn:(String,Int)=>String,text:String,key:Int):String = fn(text,key);
 
   val originalString = "Theshawa+Dasun";
   val key = 3;
   println(s"original string: ${originalString}, key: ${key}");
-  val encrypted = caesar_cipher(originalString, key);
+  val encrypted = caesar_cipher(caesar_encrypt, originalString, key);
   println(s"encrypted: ${encrypted}");
-  val decrypted = caesar_cipher(encrypted,key,'d');
+  val decrypted = caesar_cipher(caesar_decrypt, encrypted,key);
   println(s"decrypted: ${decrypted}");
 }
