@@ -20,19 +20,21 @@ object Q1 extends App {
   }
 
   def caesar_encrypt(text:String,key:Int=1):String = {
+    val shift = key%alphabetLength;
     if(text.isEmpty) text;
-    else getShiftedChar(text.head, key) + caesar_encrypt(text.tail,key);
+    else getShiftedChar(text.head, shift) + caesar_encrypt(text.tail,key);
   }
 
   def caesar_decrypt(encrypted:String,key:Int=1):String = {
+    val shift = key%alphabetLength;
     if(encrypted.isEmpty) encrypted;
-    else getShiftedChar(encrypted.head, -key) + caesar_decrypt(encrypted.tail,key);
+    else getShiftedChar(encrypted.head, -shift) + caesar_decrypt(encrypted.tail,key);
   }
 
   def caesar_cipher(fn:(String,Int)=>String,text:String,key:Int):String = fn(text,key);
 
   val originalString = "Theshawa+Dasun";
-  val key = 3;
+  val key = 544;
   println(s"original string: ${originalString}, key: ${key}");
   val encrypted = caesar_cipher(caesar_encrypt, originalString, key);
   println(s"encrypted: ${encrypted}");
