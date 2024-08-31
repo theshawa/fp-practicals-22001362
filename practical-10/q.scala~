@@ -1,0 +1,27 @@
+class Rational(val n:Int, val d:Int){
+  require(d!=0, "Denominator cannot be zero");
+
+  def neg(): Rational = new Rational(-n, d);
+
+  override def toString: String = s"$n/$d";
+}
+
+object Q1nQ2 extends App {
+  val r1 = new Rational(4,6);
+  println(r1);
+  val r2 = r1.neg();
+  println(r2);
+
+  def sub(r1:Rational,r2:Rational):Rational = {
+    val cd = if(r1.d==r2.d) r1.d else r1.d*r2.d;
+    val n1 = r1.n * (if(r1.d==r2.d) 1 else r2.d);
+    val n2 = r2.n * (if(r1.d==r2.d) 1 else r1.d);
+    new Rational(n1-n2,cd);
+  }
+
+  val x = new Rational(3,4);
+  val y = new Rational(5,8);
+  val z = new Rational(2,7);
+
+  println(sub(x, sub(y, z)));
+}
